@@ -1,17 +1,60 @@
-# the_movie_db
+# The Movie DB
 
-The Movie DB project.
+Aplicación para ver información de "The Movie DB"
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Tecnología
 
-A few resources to get you started if this is your first Flutter project:
+**Client:** Flutter v3.0.5
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**Server:** https://api.themoviedb.org
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# the_movie_db
+
+## Autor
+
+- [@cristian6425](https://github.com/cristian6425/the_movie_db.git)
+
+
+
+## Ejecutar localmente
+
+Clonar el proyecto
+
+```bash
+  git clone https://github.com/cristian6425/the_movie_db.git
+```
+
+Ir al directorio del proyecto
+
+```bash
+  cd the_movie_db
+```
+
+Instalar dependencias
+
+```bash
+  flutter put get
+```
+
+Ejecutar la aplicación
+
+```bash
+  flutter run
+```
+
+
+## Instalación
+
+Flutter version: 3.0.5
+
+Instalacion para Android
+```bash
+  flutter build apk
+  flutter install apk
+```
+
+Instalacion para iOS
+```bash
+  flutter build ios
+  flutter install ios
+```
