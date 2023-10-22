@@ -15,9 +15,8 @@ dependencies:
   flutter_bloc:
   equatable: #^2.0.3
   dio: ^5.3.3
-  get_it:
-  http:
-  get:
+  flutter_secure_storage: ^9.0.0
+  cached_network_image: ^3.3.0
 
   cupertino_icons: ^1.0.2
 

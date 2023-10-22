@@ -1,4 +1,5 @@
 extension CustomDateTime on DateTime {
 
-  String formatDate () => toString().substring(0,10);
+  String formatDate () => '${day.toString()}/${month.toString()}/${year.toString()}';
+
 }

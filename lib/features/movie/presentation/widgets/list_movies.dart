@@ -19,7 +19,7 @@ class _ListMoviesState extends State<ListMovies> {
     _scrollController.addListener(_onScroll);
   }
   void _onScroll() {
-    if (_isBottom) context.read<MovieBloc>().add(GetMovies());
+    if (_isBottom) context.read<MovieBloc>().add(GetMoviesEvent());
   }
 
   bool get _isBottom {

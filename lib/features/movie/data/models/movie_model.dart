@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:equatable/equatable.dart';
 
 class MovieModel extends Equatable {
@@ -52,9 +54,13 @@ class MovieModel extends Equatable {
     "id": id,
     "overview": overview,
     "poster_path": posterPath,
-    "release_date": releaseDate.year.toString(),
+    "release_date": releaseDate.toString(),
     "title": title,
   };
+
+  static String listToString(List<MovieModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+  static List<MovieModel> listFromJsonString(String data) => List<MovieModel>.from(json.decode(data).map((x) => MovieModel.fromJson(x)));
 
   @override
   List<Object?> get props => [

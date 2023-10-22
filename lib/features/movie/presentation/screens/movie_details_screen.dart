@@ -34,7 +34,7 @@ class MovieDetailsScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("- Gender: ${movie.genres}"),
+                          Text("- Genres: ${movie.genres}"),
                           Text("- Release date: ${movie.releaseDate.formatDate()}"),
                           const SizedBox(
                             height: 8.0,

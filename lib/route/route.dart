@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/features/movie/presentation/screens/movies_screen.dart';
 
-
 class AppRoutes {
   static final String initialRoute = RouterNames.movies;
 

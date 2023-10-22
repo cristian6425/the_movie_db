@@ -10,7 +10,7 @@ class MoviesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<MovieBloc, MovieState>(
       listener: (context, state) {
-        if (state.status == Status.failure && state.errorMessage!="") {
+        if (state.status == Status.failure && state.errorMessage != "") {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
@@ -25,16 +25,20 @@ class MoviesScreen extends StatelessWidget {
           title: const Text('Movies'),
         ),
         body: BlocBuilder<MovieBloc, MovieState>(
+          buildWhen: (previous, current) => previous.loading != current.loading,
           builder: (context, state) {
             return Stack(
               children: [
-                if (state.movies.isNotEmpty)
-                  const ListMovies(),
-                if (state.movies.isEmpty &&
-                    state.status != Status.initial)
-                  const Center(child: Text('no movies')),
-                if (state.loading)
-                  const Center(child: CircularProgressIndicator()),
+                if (state.movies.isNotEmpty) const ListMovies(),
+                if (state.movies.isEmpty && state.status != Status.initial)Container(
+                  child: Column(children: [
+                    const Center(child: Text('no movies')),
+                    TextButton(onPressed: (){
+                      context.read<MovieBloc>().add(MovieInitialStateEvent());
+                    }, child: Text("Retry"))
+                  ],),
+                ),
+                if (state.loading) const Center(child: CircularProgressIndicator()),
               ],
             );
           },

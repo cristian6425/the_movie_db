@@ -22,6 +22,8 @@ class GenreModel extends Equatable{
 
   static List<GenreModel> genreModelListFromListMap(dynamic genres) => List<GenreModel>.from(genres.map((x) => GenreModel.fromJson(x)));
 
+  static List<GenreModel> genreModelListFromString(String genres) => List<GenreModel>.from(json.decode(genres).map((x) => GenreModel.fromJson(x)));
+
   static String genreModelListToJson(List<GenreModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
   @override

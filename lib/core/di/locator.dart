@@ -5,7 +5,7 @@ import 'package:the_movie_db/features/movie/presentation/blocs/movie_bloc.dart';
 class LocatorDi {
   static get instance => [
         BlocProvider(
-          create: (_) => MovieBloc(movieUseCase: movieUseCaseDi.movieUseCase)..add(MovieInitialState()),
+          create: (_) => MovieBloc(movieUseCase: movieUseCaseDi.movieUseCase)..add(MovieInitialStateEvent()),
         )
       ];
 }

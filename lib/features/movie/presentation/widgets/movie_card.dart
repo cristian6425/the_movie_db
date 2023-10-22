@@ -17,11 +17,9 @@ class MovieCard extends StatefulWidget {
 class _MovieCardState extends State<MovieCard> {
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
       onTap: detailOnClink,
       child: Card(
-
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,

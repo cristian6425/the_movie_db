@@ -9,8 +9,8 @@ class MovieUseCase {
 
   MovieUseCase(this._movieRepository);
 
-  Future<MovieResponseModel> getMovies(List<GenreModel> genres,{int page = 1}) async {
-    final movies =await _movieRepository.getMovies(page);
+  Future<(MovieResponseModel,bool)> getMovies(List<GenreModel> genres,{int page = 1}) async {
+    final (movies,isCache) = await _movieRepository.getMovies(page);
     List<MovieModel> moviesWithGenres = [];
     for (var element in (movies.results as List<MovieModel>)) {
       moviesWithGenres.add(element.copyWith(
@@ -18,7 +18,7 @@ class MovieUseCase {
     ));
     }
 
-    return movies.copyWith(movies: moviesWithGenres);
+    return (movies.copyWith(movies: moviesWithGenres),isCache);
   }
 
   Future<(List<GenreModel>,String)> getInitConfig() async {
@@ -26,5 +26,8 @@ class MovieUseCase {
     final String baseUrl = await _movieRepository.getBaseUrl();
     return (genres,baseUrl);
   }
+
+  Future<void> saveMovies (MovieResponseModel movieResponse) => _movieRepository.saveMovies(movieResponse);
+
 
 }
