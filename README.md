@@ -36,6 +36,8 @@ Instalar dependencias
   flutter put get
 ```
 
+Agregar apiToken de la pagina oficial https://api.themoviedb.org en el archivo de configuración que esta en lib/config/config.dart
+
 Ejecutar la aplicación
 
 ```bash
@@ -47,13 +49,13 @@ Ejecutar la aplicación
 
 Flutter version: 3.0.5
 
-Instalacion para Android
+Instalación para Android
 ```bash
   flutter build apk
   flutter install apk
 ```
 
-Instalacion para iOS
+Instalación para iOS
 ```bash
   flutter build ios
   flutter install ios
